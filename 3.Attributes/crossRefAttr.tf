@@ -1,3 +1,8 @@
+/*
+  Use string interpolation "${IPv4}" becuse we want to append more at the end e.g. /32
+  If we are not ppending string - usewithout interpolation
+*/
+
 resource "aws_eip" "lb" {
   domain   = "vpc"
 }
