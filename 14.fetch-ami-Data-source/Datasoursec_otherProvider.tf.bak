@@ -1,0 +1,20 @@
+/*
+-  data sourse aloows terraform to use/ fetch information defained outside of terraform defined by 
+    another separate Terraform configuration, or modified by functions.
+
+  the feched data is visible on tfstate file
+*/
+
+terraform {
+  required_providers {
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+    }
+  }
+}
+
+provider "digitalocean" {
+  token = "your-token-here"
+}
+
+data "digitalocean_account" "example" {}
